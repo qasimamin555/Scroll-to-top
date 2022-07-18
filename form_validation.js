@@ -1,4 +1,4 @@
-let data = {
+    let data = {
       ...state.form_data,
       queue: state.form_data.queue.value,
       destination: state.form_data.destination.value,
@@ -17,12 +17,17 @@ let data = {
     let validationObject = {};
     validate.filter((search) => {
       validationObject[search] = data[search]
-    });
+    })
+
     for (const key in validationObject) {
       if (validationObject[key].trim() === '') {
+        console.log(key)
         if (typeof key === 'string') {
+          console.log(key, 9999)
           return setState({ ...state, error: key })
         }
+        else return;
       }
     }
-else worksssssssssss
+
+    console.log(9999, 'Function is going to run')
